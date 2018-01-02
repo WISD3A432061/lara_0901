@@ -32,7 +32,7 @@ class AdminPostsController extends Controller
         return redirect()->route('admin.posts.index');
     }
 
-    public function update(Request $request, $id)
+    public function update(PostRequest $request, $id)
      {
          $post = Post::find($id);
          $post->update($request->all());
