@@ -13,10 +13,16 @@ class PostsController extends Controller
         return view('posts.index');
     }
 
-    public function show($id)
+    public function edit($id)
     {
-        $data = ['id' => $id];
-
-        return view('posts.show', $data);
+        $post = Post::find($id);
+        $data = ['post' => $post];
+        return view('admin.posts.edit', $data);
     }
+
+    
+
+
+
+
 }
